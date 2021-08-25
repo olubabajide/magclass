@@ -1,7 +1,7 @@
 pipeline {
-  agent any
+  agent any;
   stages {
-    stage('Preparing the environment')
+    stage('Preparing the environment') {
        steps {
           sh 'python -m pip install -r requirement.txt'
        }
