@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Code Quality') {
       steps {
-        sh 'pyhton3 -m pylint app.py'
+        sh 'python3 -m pylint app.py'
       }
     }
     
