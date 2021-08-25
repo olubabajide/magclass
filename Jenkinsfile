@@ -8,13 +8,13 @@ pipeline {
     }
     stage('Code Quality') {
       steps {
-        sh 'python3 -m pylint app.py'
+        sh 'python -m pylint app.py'
       }
     }
     
     stage('Tests') {
       steps {
-        sh 'python3 -m pytest'
+        sh 'python -m pytest'
       }
     }
    
