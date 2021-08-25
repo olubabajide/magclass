@@ -8,7 +8,12 @@ pipeline {
     }
     stage('Code Quality') {
       steps {
-        sh 'python3 -m pylint app.py'
+        sh '''
+            apt install pyhton3-pip
+            
+            pip install pylint
+
+           '''
       }
     }
     
@@ -20,19 +25,19 @@ pipeline {
    
     stage('Build') {
       steps {
-        sh 'exit 1'
+        sh 'ls'
       }
     }
 
     stage('Delivery') {
       steps {
-        sh 'exit 1'
+        sh 'echo i love linux'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'exit 1'
+        sh 'echo %date%'
       }
     }
 
