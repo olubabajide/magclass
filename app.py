@@ -14,22 +14,22 @@ def check_card(func):
 
     def validation(*args, **kwargs):
         """
-          This function is a decorator,
-          which will return the function corresponding to the respective action
+        This function is a decorator,
+        which will return the function corresponding to the respective action
         """
         data = request.get_json()
         if not data.get("status"):
             response = {"approved": False,
-                        "newLimit": data.get("limit"),
-                        "reason": "Blocked Card"}
+            "newLimit": data.get("limit"),
+            "reason": "Blocked Card"}
             return jsonify(response)
 
         if data.get("limit") < data.get("transaction").get("amount"):
             response = {"approved": False,
-                        "newLimit": data.get("limit"),
-                        "reason": "Transaction above the limit"}
+            "newLimit": data.get("limit"),
+            "reason": "Transaction above the limit"}
             return jsonify(response)
-        return func(*args, **kwargs)
+            return func(*args, **kwargs)
 
     return validation
 
