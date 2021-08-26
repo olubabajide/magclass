@@ -7,32 +7,32 @@ pipeline {
        }
     }
     stage('Code Quality') {
-      steps {
-         sh 'python3 -m pylint app.py'
+       steps {
+          sh 'python3 -m pylint app.py'
       }
     }
     
     stage('Tests') {
-      steps {
-         sh 'python3 -m pytest'
+       steps {
+          sh 'python3 -m pytest'
       }
     }
    
     stage('Build') {
-      steps {
-         sh 'ls'
+       steps {
+          sh 'ls'
       }
     }
 
     stage('Delivery') {
-      steps {
-         sh 'echo i love linux'
+       steps {
+          sh 'echo i love linux'
       }
     }
 
     stage('Deploy') {
-      steps {
-         sh 'echo %date%'
+       steps {
+          sh 'echo %date%'
       }
     }
 
