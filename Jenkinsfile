@@ -9,7 +9,7 @@ pipeline {
     stage('Code Quality') {
       steps {
         sh '''
-            apt install python3-pip -y
+            sudo apt install python3-pip -y
             
             pip install pylint
 
