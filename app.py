@@ -29,9 +29,9 @@ def check_card(func):
                         "newLimit": data.get("limit"),
                         "reason": "Transaction above the limit"}
             return jsonify(response)
-            return func(*args, **kwargs)
+            return f(*args, **kwargs)
 
-    return validation
+    return(validation)
 
 
 @APP.route("/api/transaction", methods=["POST"])
